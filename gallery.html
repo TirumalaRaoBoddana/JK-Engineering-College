@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html class="light" lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Computer Science - JK Engineering College</title>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gallery | JK Engineering College</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
@@ -14,151 +15,163 @@
       theme: {
         extend: {
           colors: {
-            primary: "#0d40a5",
+            "primary": "#001f3f",
+            "secondary": "#D4AF37",
             "background-light": "#f6f6f8",
             "background-dark": "#101622",
+            "text-light": "#111318",
+            "text-dark": "#f6f6f8",
+            "card-light": "#ffffff",
+            "card-dark": "#1a2233"
           },
           fontFamily: {
-            display: ["Public Sans", "sans-serif"],
-          },
-        },
-      },
-    };
-  </script>
-
-  <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            "display": ["Public Sans", "sans-serif"]
+          }
+        }
+      }
     }
-  </style>
+  </script>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display">
-  <div class="relative flex flex-col min-h-screen overflow-x-hidden">
-    <!-- ===== Navbar ===== -->
-    <header class="bg-background-light dark:bg-background-dark sticky top-0 z-20 border-b border-gray-200 dark:border-gray-800">
-      <div class="flex items-center justify-between px-4 py-3 md:px-8">
-        <a href="index.html" class="text-primary flex items-center gap-2">
-          <span class="material-symbols-outlined text-3xl">school</span>
-          <span class="font-bold text-lg">JK Engineering College</span>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header
+      class="sticky top-0 z-50 flex items-center bg-card-light/80 dark:bg-card-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-700">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary dark:text-secondary text-3xl">school</span>
+          <h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">JK Engineering College</h2>
         </a>
-
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-          <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Home</a>
-          <a href="about_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">About</a>
-          <a href="departments.html" class="text-primary dark:text-blue-300">Departments</a>
-          <a href="admissions.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Admissions</a>
-          <a href="gallery.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Gallery</a>
-          <a href="contact_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Contact</a>
-        </nav>
-
-        <!-- Mobile Button -->
-        <button id="menu-btn" class="md:hidden flex items-center justify-center text-[#111318] dark:text-white">
-          <span class="material-symbols-outlined text-3xl">menu</span>
-        </button>
       </div>
 
-      <!-- Mobile Menu -->
-      <nav id="mobile-menu" class="hidden flex-col bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 md:hidden">
-        <a href="index.html" class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white">Home</a>
-        <a href="about_us.html" class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white">About</a>
-        <a href="departments.html" class="px-4 py-3 text-primary dark:text-blue-300 bg-gray-100 dark:bg-gray-800">Departments</a>
-        <a href="admissions.html" class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white">Admissions</a>
-        <a href="gallery.html" class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white">Gallery</a>
-        <a href="contact_us.html" class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white">Contact</a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-4 text-sm font-medium">
+        <a href="index.html"
+          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Home</a>
+        <a href="about_us.html"
+          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">About</a>
+        <a href="departments.html"
+          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Departments</a>
+        <a href="admissions.html"
+          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Admissions</a>
+        <a href="gallery.html" class="text-primary dark:text-secondary font-bold">Gallery</a>
+        <a href="contact_us.html"
+          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Contact</a>
       </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center justify-end md:hidden">
+        <button id="menu-btn"
+          class="flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 bg-transparent text-text-light dark:text-text-dark">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
     </header>
 
-    <!-- ===== Hero Section ===== -->
-    <section class="relative bg-cover bg-center bg-no-repeat h-[60vh] flex items-center justify-start px-6 md:px-10 text-white" 
-      style='background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)),url("https://lh3.googleusercontent.com/aida-public/AB6AXuD14zerW4F3l8V6ijGF4SUAfCMwh6dTzGgVmPlgW1JQzEChM8n8_tdZuGvsmt_V2VcnoKxikg9h1Soogy16ENbaukTQ_iiLR-x_qO7jH3nRrSF_uxJ9C5HhzCqAbHOwmJUL7-f8GEMhj8UDN-uEfE2jbJagvfZSpyr0W4eYBXv7eE7Xj70OKbCrRARsjFrtQ9g3EdajzqR1pePXIwydShCaZ85Jwhu-hjj0MVAacGl3rAgmc-EzQ7qFEGH6zj6SFFTUUuL_iLe13bg");'>
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-black mb-2">Department of Computer Science</h1>
-        <p class="text-lg">Shaping the future of technology and innovation.</p>
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav"
+      class="hidden md:hidden flex-col bg-card-light dark:bg-card-dark absolute top-[64px] left-0 w-full shadow-lg border-t border-gray-200 dark:border-gray-700 z-40">
+      <a href="index.html"
+        class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+      <a href="about_us.html"
+        class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+      <a href="departments.html"
+        class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Departments</a>
+      <a href="admissions.html"
+        class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Admissions</a>
+      <a href="gallery.html"
+        class="block px-6 py-3 text-primary dark:text-secondary font-bold bg-gray-100 dark:bg-gray-800">Gallery</a>
+      <a href="contact_us.html"
+        class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+    </nav>
+
+    <!-- ===== Gallery Section ===== -->
+    <section class="px-6 md:px-10 pb-16 mt-6">
+
+      <!-- Filter Chips -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <button class="filter-btn active px-4 py-2 bg-primary text-white rounded-full text-sm font-semibold hover:bg-secondary transition" data-category="all">All</button>
+        <button class="filter-btn px-4 py-2 bg-card-light dark:bg-card-dark border border-gray-300 dark:border-gray-600 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition" data-category="campus-life">Campus Life</button>
+        <button class="filter-btn px-4 py-2 bg-card-light dark:bg-card-dark border border-gray-300 dark:border-gray-600 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition" data-category="events">Events</button>
+        <button class="filter-btn px-4 py-2 bg-card-light dark:bg-card-dark border border-gray-300 dark:border-gray-600 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition" data-category="facilities">Facilities</button>
+        <button class="filter-btn px-4 py-2 bg-card-light dark:bg-card-dark border border-gray-300 dark:border-gray-600 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition" data-category="academics">Academics</button>
+        <button class="filter-btn px-4 py-2 bg-card-light dark:bg-card-dark border border-gray-300 dark:border-gray-600 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition" data-category="achievements">Achievements</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        <!-- Campus Life -->
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="campus-life" alt="Campus Life 1">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="campus-life" alt="Campus Life 2">
+        <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="campus-life" alt="Campus Life 3">
+
+        <!-- Events -->
+        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="events" alt="Event 1">
+        <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="events" alt="Event 2">
+        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="events" alt="Event 3">
+
+        <!-- Facilities -->
+        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="facilities" alt="Facility 1">
+        <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="facilities" alt="Facility 2">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="facilities" alt="Facility 3">
+
+        <!-- Academics -->
+        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="academics" alt="Academics 1">
+        <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="academics" alt="Academics 2">
+
+        <!-- Achievements -->
+        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="achievements" alt="Achievement 1">
+        <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=80" class="gallery-item rounded-lg shadow-md" data-category="achievements" alt="Achievement 2">
+
       </div>
     </section>
 
-    <!-- ===== About Section ===== -->
-    <main class="flex-grow">
-      <section id="about" class="py-10 px-6 md:px-10 bg-background-light dark:bg-background-dark">
-        <h2 class="text-3xl font-bold text-[#111318] dark:text-white mb-4">About the Department</h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-3">
-          Welcome to the Department of Computer Science. Our mission is to advance the frontiers of computing and to educate the next generation of leaders in technology and research through a rigorous, hands-on curriculum.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300">
-          Founded in 1985, our department has a rich history of innovation, consistently ranking among the top computer science programs in the nation. We are committed to fostering a diverse and inclusive environment where creativity and collaboration thrive.
-        </p>
-      </section>
-
-      <!-- ===== Programs Section ===== -->
-      <section id="courses" class="py-10 px-6 md:px-10 bg-background-light dark:bg-background-dark">
-        <h2 class="text-3xl font-bold text-[#111318] dark:text-white mb-6">Programs Offered</h2>
-        <div class="space-y-4">
-          <details class="group bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-            <summary class="flex justify-between cursor-pointer text-base font-bold text-primary dark:text-blue-300">
-              B.S. in Computer Science
-              <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-            </summary>
-            <p class="mt-3 text-sm text-gray-700 dark:text-gray-300">
-              Covers algorithms, data structures, and software engineering. Duration: 4 years.
-            </p>
-          </details>
-          <details class="group bg-white dark:bg-gray-800 rounded-lg shadow p-4">
-            <summary class="flex justify-between cursor-pointer text-base font-bold text-primary dark:text-blue-300">
-              M.S. in Artificial Intelligence
-              <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-            </summary>
-            <p class="mt-3 text-sm text-gray-700 dark:text-gray-300">
-              Focus on machine learning, NLP, and computer vision. Duration: 2 years.
-            </p>
-          </details>
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white mt-8">
+      <div class="p-8">
+        <div class="flex flex-col gap-4">
+          <h4 class="font-bold text-lg">JK Engineering College</h4>
+          <p class="text-sm text-white/80">123 University Lane, Springfield, USA</p>
+          <p class="text-sm text-white/80">(123) 456-7890</p>
         </div>
-      </section>
-    </main>
 
-    <!-- ===== Footer ===== -->
-    <footer class="bg-primary text-white py-10 mt-16">
-      <div class="max-w-screen-xl mx-auto px-6 space-y-6">
-        <div class="flex flex-col md:flex-row justify-between">
-          <div>
-            <h3 class="text-xl font-bold">JK Engineering College</h3>
-            <p class="mt-2 text-slate-300 max-w-sm">
-              Fostering knowledge and innovation for a better future.
-            </p>
-          </div>
-          <div class="flex gap-8 mt-6 md:mt-0">
-            <div>
-              <h4 class="font-bold mb-2">Academics</h4>
-              <ul class="space-y-1 text-slate-300 text-sm">
-                <li><a href="departments.html" class="hover:opacity-75">Programs</a></li>
-                <li><a href="departments.html" class="hover:opacity-75">Departments</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-bold mb-2">Admissions</h4>
-              <ul class="space-y-1 text-slate-300 text-sm">
-                <li><a href="admissions.html" class="hover:opacity-75">How to Apply</a></li>
-                <li><a href="contact_us.html" class="hover:opacity-75">Visit Us</a></li>
-              </ul>
-            </div>
-          </div>
+        <div class="border-t border-white/20 mt-6 pt-6 text-center text-xs text-white/60">
+          <p>© 2025 JK Engineering College. All Rights Reserved.</p>
+          <a class="underline hover:text-white" href="#">Privacy Policy</a> |
+          <a class="underline hover:text-white" href="contact_us.html">Contact Us</a>
         </div>
-        <p class="text-xs text-slate-400 text-center">© 2024 JK Engineering College. All rights reserved.</p>
       </div>
     </footer>
   </div>
 
-  <!-- ===== JS: Mobile Menu Toggle ===== -->
+  <!-- Scripts -->
   <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
 
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      const icon = menuBtn.querySelector(".material-symbols-outlined");
-      icon.textContent = mobileMenu.classList.contains("hidden") ? "menu" : "close";
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state
+        filterBtns.forEach(b => b.classList.remove('bg-primary', 'text-white', 'active'));
+        btn.classList.add('bg-primary', 'text-white', 'active');
+
+        const category = btn.dataset.category;
+
+        galleryItems.forEach(item => {
+          item.style.display = (category === 'all' || item.dataset.category === category)
+            ? 'block'
+            : 'none';
+        });
+      });
     });
   </script>
+
 </body>
 </html>
