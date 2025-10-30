@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -9,6 +7,7 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -27,62 +26,79 @@
           fontFamily: {
             "display": ["Public Sans", "sans-serif"]
           },
-          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
         },
       },
     }
   </script>
+
   <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
 </head>
-
 <body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
   <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-    <header
-      class="sticky top-0 z-50 flex items-center bg-card-light/80 dark:bg-card-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-700">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 flex items-center bg-card-light/80 dark:bg-card-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-700">
       <div class="flex items-center gap-3">
         <a href="index.html" class="flex items-center gap-3">
           <span class="material-symbols-outlined text-primary dark:text-secondary text-3xl">school</span>
-          <h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1">JK
-            Engineering College</h2>
+          <h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1">
+            JK Engineering College
+          </h2>
         </a>
       </div>
+
+      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center space-x-4 text-sm font-medium">
         <a href="index.html" class="text-primary dark:text-secondary">Home</a>
-        <a href="about_us.html"
-          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">About</a>
-        <a href="departments.html"
-          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Departments</a>
-        <a href="admissions.html"
-          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Admissions</a>
-        <a href="gallery.html"
-          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Gallery</a>
-        <a href="contact_us.html"
-          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Contact</a>
+        <a href="about_us.html" class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">About</a>
+        <a href="departments.html" class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Departments</a>
+        <a href="admissions.html" class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Admissions</a>
+        <a href="gallery.html" class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Gallery</a>
+        <a href="contact_us.html" class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Contact</a>
       </nav>
+
+      <!-- Mobile Menu Button -->
       <div class="flex items-center justify-end md:hidden">
-        <button
-          class="flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 bg-transparent text-text-light dark:text-text-dark">
+        <button id="menu-btn" class="flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 bg-transparent text-text-light dark:text-text-dark">
           <span class="material-symbols-outlined text-2xl">menu</span>
         </button>
       </div>
     </header>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav"
+         class="hidden md:hidden flex-col bg-card-light dark:bg-card-dark absolute top-[64px] left-0 w-full shadow-lg border-t border-gray-200 dark:border-gray-700 z-40">
+      <a href="index.html" class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+      <a href="about_us.html" class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+      <a href="departments.html" class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Departments</a>
+      <a href="admissions.html" class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Admissions</a>
+      <a href="gallery.html" class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Gallery</a>
+      <a href="contact_us.html" class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
     <main>
       <div class="@container">
         <div class="@[480px]:p-4">
           <div
             class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 items-center justify-center p-4 @[480px]:rounded-xl"
-            data-alt="A grand, sunlit modern university campus building with students walking around."
             style='background-image: linear-gradient(rgba(0, 31, 63, 0.4) 0%, rgba(0, 31, 63, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoE_Q7uAq2rVg_FBfDvjArE7_qqE9WecwpQDfazStxKtP42KTZI4SxPXZZqAafL85-dE__cYY5bSG2sUkbdU16ZPlqhYhTYmPAOpGTEzm25yO4EYBXqGAwowOzRZANewRN7NbpwJNOB36e4pdAln_J4Qok9zl9Hybt2oxQtIpKiP-jRRE6VvDyIqt_MDbnCRI_BSfv-E89dR6Eu2UZOSi3dsdXK2uqhDzUDYdbxGMKi7EZTeZiQf_MQXmzqpdvvptSOiJHy563tOo");'>
             <div class="flex flex-col gap-2 text-center">
-              <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
+              <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
                 JK Engineering College
               </h1>
-              <h2 class="text-white text-base font-normal leading-normal @[480px]:text-lg">Inspiring the Leaders of
-                Tomorrow</h2>
+              <h2 class="text-white text-base sm:text-lg font-normal leading-normal">
+                Inspiring the Leaders of Tomorrow
+              </h2>
             </div>
             <a href="admissions.html"
               class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-secondary text-primary text-base font-bold leading-normal tracking-[0.015em] hover:bg-secondary/90 transition-colors">
@@ -91,14 +107,14 @@
           </div>
         </div>
       </div>
+
       <section class="p-4">
         <div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm">
-          <h1
-            class="text-text-light dark:text-text-dark tracking-light text-[28px] font-bold leading-tight text-left pb-3">
-            Welcome to JK Engineering College</h1>
+          <h1 class="text-text-light dark:text-text-dark tracking-light text-[24px] sm:text-[28px] font-bold leading-tight text-left pb-3">
+            Welcome to JK Engineering College
+          </h1>
           <p class="text-text-light/80 dark:text-text-dark/80 text-base font-normal leading-normal pb-4">
-            Discover a place where curiosity, creativity, and critical thinking thrive. For over a century, JK Engineering College has been dedicated to academic excellence and fostering a community of learners prepared to make
-            a difference in the world.
+            Discover a place where curiosity, creativity, and critical thinking thrive. For over a century, JK Engineering College has been dedicated to academic excellence and fostering a community of learners prepared to make a difference in the world.
           </p>
           <div class="flex justify-start">
             <a href="about_us.html"
@@ -108,68 +124,61 @@
           </div>
         </div>
       </section>
+
       <section class="px-4 py-6">
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           <a href="departments.html" class="flex flex-col items-center gap-2 p-3">
-            <div
-              class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary">
               <span class="material-symbols-outlined text-3xl">menu_book</span>
             </div>
-            <span class="text-sm font-bold text-text-light dark:text-text-dark">Academics</span>
+            <span class="text-sm font-bold">Academics</span>
           </a>
           <a href="gallery.html" class="flex flex-col items-center gap-2 p-3">
-            <div
-              class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary">
               <span class="material-symbols-outlined text-3xl">groups</span>
             </div>
-            <span class="text-sm font-bold text-text-light dark:text-text-dark">Campus Life</span>
+            <span class="text-sm font-bold">Campus Life</span>
           </a>
           <a href="admissions.html" class="flex flex-col items-center gap-2 p-3">
-            <div
-              class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary">
               <span class="material-symbols-outlined text-3xl">school</span>
             </div>
-            <span class="text-sm font-bold text-text-light dark:text-text-dark">Admissions</span>
+            <span class="text-sm font-bold">Admissions</span>
           </a>
           <a href="departments.html" class="flex flex-col items-center gap-2 p-3">
-            <div
-              class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 dark:bg-secondary/10 text-primary dark:text-secondary">
               <span class="material-symbols-outlined text-3xl">science</span>
             </div>
-            <span class="text-sm font-bold text-text-light dark:text-text-dark">Research</span>
-          </a>
-        </div>
-      </section>
-      <section class="bg-background-light dark:bg-background-dark py-6 px-4">
-        <h1
-          class="text-text-light dark:text-text-dark tracking-light text-[28px] font-bold leading-tight px-0 text-left pb-4">
-          Program Highlights</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <a href="departments.html"
-            class="bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
-            <img class="h-48 w-full object-cover" data-alt="Students collaborating on a complex engineering project."
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5wbAWVlI7rN5bZFbQq2dVvoKIFvi8frrHzkehavei85ZQcFvQJQ8rHPMB92tZuBjSsQhGphgnN28ZW18C-LCGPDXedWwgyBSIyJJu64-n_zsB0nm67rpY_ETBiMbTBkZbzgSFRu7ok7idktibq-1N_5iCYacSe9bjxGn72i_ezerM2JBvfboiTXZc0olAfvuo-BBacg5DE02BqSjZBouZMccBMggP5Va-4H0SnSpBIH-CdAvU1myT9fq5TPWkkLgpUDRbntgXzAI" />
-            <div class="p-4 flex-grow">
-              <h3 class="font-bold text-lg text-primary dark:text-secondary">Engineering</h3>
-              <p class="text-text-light/80 dark:text-text-dark/80 text-sm mt-1">Build the future with cutting-edge
-                technology and innovation.</p>
-            </div>
-          </a>
-          <a href="departments.html"
-            class="bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
-            <img class="h-48 w-full object-cover"
-              data-alt="A diverse group of students in a bright, modern lecture hall."
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeVfrQd5FVPdQBQ_CSAl1BlXWFZXebZExBhyKjgbtRtWZS6ZSPBoipgxhQy1etpA-2Jzu9pQng9PHhxF7LRa2fYi3SOdjARTV0OSGGwrmrhbGogaK9REMZWdhR0bM7gDhkIx-u4Vzjv750WJlLiKJkDwE7Hw7lXH8e0XFmdpiNJ0EhN3EBt5hARytwUF41Wr_C3HyfmKlcD2bN200LpSHQ7UY-bFLLODKlBEH8tbySNf7n0MtIM9aJ7qtTgXDJpbI7eGxRgmjwqlE" />
-            <div class="p-4 flex-grow">
-              <h3 class="font-bold text-lg text-primary dark:text-secondary">Arts & Sciences</h3>
-              <p class="text-text-light/80 dark:text-text-dark/80 text-sm mt-1">Explore human creativity, culture, and
-                the natural world.</p>
-            </div>
+            <span class="text-sm font-bold">Research</span>
           </a>
         </div>
       </section>
 
+      <section class="bg-background-light dark:bg-background-dark py-6 px-4">
+        <h1 class="text-text-light dark:text-text-dark tracking-light text-[24px] sm:text-[28px] font-bold leading-tight pb-4">
+          Program Highlights
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a href="departments.html" class="bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
+            <img class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5wbAWVlI7rN5bZFbQq2dVvoKIFvi8frrHzkehavei85ZQcFvQJQ8rHPMB92tZuBjSsQhGphgnN28ZW18C-LCGPDXedWwgyBSIyJJu64-n_zsB0nm67rpY_ETBiMbTBkZbzgSFRu7ok7idktibq-1N_5iCYacSe9bjxGn72i_ezerM2JBvfboiTXZc0olAfvuo-BBacg5DE02BqSjZBouZMccBMggP5Va-4H0SnSpBIH-CdAvU1myT9fq5TPWkkLgpUDRbntgXzAI" alt="Students collaborating on a complex engineering project." />
+            <div class="p-4 flex-grow">
+              <h3 class="font-bold text-lg text-primary dark:text-secondary">Engineering</h3>
+              <p class="text-text-light/80 dark:text-text-dark/80 text-sm mt-1">Build the future with cutting-edge technology and innovation.</p>
+            </div>
+          </a>
+
+          <a href="departments.html" class="bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-sm flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
+            <img class="h-48 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeVfrQd5FVPdQBQ_CSAl1BlXWFZXebZExBhyKjgbtRtWZS6ZSPBoipgxhQy1etpA-2Jzu9pQng9PHhxF7LRa2fYi3SOdjARTV0OSGGwrmrhbGogaK9REMZWdhR0bM7gDhkIx-u4Vzjv750WJlLiKJkDwE7Hw7lXH8e0XFmdpiNJ0EhN3EBt5hARytwUF41Wr_C3HyfmKlcD2bN200LpSHQ7UY-bFLLODKlBEH8tbySNf7n0MtIM9aJ7qtTgXDJpbI7eGxRgmjwqlE" alt="Students in lecture hall." />
+            <div class="p-4 flex-grow">
+              <h3 class="font-bold text-lg text-primary dark:text-secondary">Arts & Sciences</h3>
+              <p class="text-text-light/80 dark:text-text-dark/80 text-sm mt-1">Explore human creativity, culture, and the natural world.</p>
+            </div>
+          </a>
+        </div>
+      </section>
     </main>
+
+    <!-- FOOTER -->
     <footer class="bg-primary text-white mt-8">
       <div class="p-8">
         <div class="flex flex-col gap-4">
@@ -177,34 +186,29 @@
           <p class="text-sm text-white/80">123 University Lane, Springfield, USA</p>
           <p class="text-sm text-white/80">(123) 456-7890</p>
         </div>
+
         <div class="flex gap-4 mt-6">
-          <a class="text-white/80 hover:text-white" data-alt="Facebook icon" href="#"><svg class="h-6 w-6"
-              fill="currentColor" viewbox="0 0 24 24">
-              <path
-                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
-              </path>
-            </svg></a>
-          <a class="text-white/80 hover:text-white" data-alt="Twitter icon" href="#"><svg class="h-6 w-6"
-              fill="currentColor" viewbox="0 0 24 24">
-              <path
-                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.799 4.658-.566.155-1.168.21-1.782.13.621 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
-              </path>
-            </svg></a>
-          <a class="text-white/80 hover:text-white" data-alt="LinkedIn icon" href="#"><svg class="h-6 w-6"
-              fill="currentColor" viewbox="0 0 24 24">
-              <path
-                d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z">
-              </path>
-            </svg></a>
+          <a class="text-white/80 hover:text-white" href="#"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+          <a class="text-white/80 hover:text-white" href="#"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.799 4.658-.566.155-1.168.21-1.782.13.621 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+          <a class="text-white/80 hover:text-white" href="#"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path></svg></a>
         </div>
+
         <div class="border-t border-white/20 mt-6 pt-6 text-center text-xs text-white/60">
-          <p>© 2025 JK Engineering Collge. All Rights Reserved.</p>
-          <a class="underline hover:text-white" href="#">Privacy Policy</a> | <a class="underline hover:text-white"
-            href="contact_us.html">Contact Us</a>
+          <p>© 2025 JK Engineering College. All Rights Reserved.</p>
+          <a class="underline hover:text-white" href="#">Privacy Policy</a> | 
+          <a class="underline hover:text-white" href="contact_us.html">Contact Us</a>
         </div>
       </div>
     </footer>
   </div>
-</body>
 
+  <!-- Mobile Nav Toggle Script -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+  </script>
+</body>
 </html>
