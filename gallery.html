@@ -1,250 +1,164 @@
 <!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computer Science - JK Engineering College</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>JK Engineering College - Gallery</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#0d40a5",
-              "background-light": "#f6f6f8",
-              "background-dark": "#101622",
-              "gold": "#FFD700",
-            },
-            fontFamily: {
-              "display": ["Public Sans", "sans-serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0d40a5",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            display: ["Public Sans", "sans-serif"],
           },
         },
-      }
-    </script>
-<style>
-        .group .group-hover\:opacity-100 {
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .group:hover .group-hover\:opacity-100 {
-            opacity: 1;
-        }
-        .group .group-hover\:scale-110 {
-            transition: transform 0.3s ease-in-out;
-        }
-        .group:hover .group-hover\:scale-110 {
-            transform: scale(1.1);
-        }
-        /* Style for the inactive chip */
-        .filter-chip.inactive {
-            background-color: white;
-            color: #111318; /* dark text */
-        }
-        .dark .filter-chip.inactive {
-            background-color: #374151; /* gray-700 */
-            color: #f3f4f6; /* gray-100 */
-        }
-        .filter-chip.inactive:hover {
-            background-color: rgba(13, 64, 165, 0.2); /* primary/20 */
-        }
-        .dark .filter-chip.inactive:hover {
-             background-color: rgba(13, 64, 165, 0.3); /* primary/30 */
-        }
-        
-        /* Style for the active chip */
-        .filter-chip.active {
-            background-color: #0d40a5; /* primary */
-            color: white;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
+      },
+    };
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
     }
   </style>
-  </head>
+</head>
+
 <body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden text-gray-800 dark:text-gray-200">
-<header class="sticky top-0 z-50 flex items-center bg-background-light dark:bg-background-dark p-4 shadow-md justify-between">
-<a href="index.html" class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-3xl">school</span>
-<h2 class="text-xl font-bold leading-tight tracking-[-0.015em] text-center text-primary dark:text-white hidden sm:block">JK Engineering College</h2>
-</a>
-<nav class="hidden md:flex items-center space-x-4 text-sm font-medium">
-<a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gold">Home</a>
-<a href="about_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gold">About</a>
-<a href="departments.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gold">Departments</a>
-<a href="admissions.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gold">Admissions</a>
-<a href="gallery.html" class="text-primary dark:text-gold">Gallery</a>
-<a href="contact_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-gold">Contact</a>
-</nav>
-<button class="md:hidden flex h-12 w-12 items-center justify-center rounded-full text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</header>
-<main class="flex-grow">
-<h1 class="text-gray-900 dark:text-white tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-3 pt-6">Gallery</h1>
-<div class="px-4 pb-4">
-<div class="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4">
-<button class="filter-chip active flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full px-4 text-sm font-medium leading-normal" data-filter="all">
-                All
-            </button>
-<button class="filter-chip inactive flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full px-4 text-sm font-medium leading-normal" data-filter="campus-life">
-                Campus Life
-            </button>
-<button class="filter-chip inactive flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full px-4 text-sm font-medium leading-normal" data-filter="events">
-                Events
-            </button>
-<button class="filter-chip inactive flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full px-4 text-sm font-medium leading-normal" data-filter="facilities">
-                Facilities
-            </button>
-<button class="filter-chip inactive flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full px-4 text-sm font-medium leading-normal" data-filter="academics">
-                Academics
-            </button>
-<button class="filter-chip inactive flex h-8 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full px-4 text-sm font-medium leading-normal" data-filter="achievements">
-                Achievements
-            </button>
-</div>
-</div>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4">
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="facilities">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="Students studying together in a modern library" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaRFmdU2cf05vF54iPunhtJbbUY1l9YNFuszjVt7UDkxjP3ZfLqCOK0RoJTawNmEKdlbzoaia_SKOjwqmmT_v8hi0Av5Wr2vRWts0SAuvbla7plK5edw-4eze1ddKGnF35U3gIFub0SX6pQaKAOXo1rgEJdtCAbiVD7l4BZzB3NooCPT_ee2Ht9GAXwextlEqbpL2-gOHnjFuk3sj1Xgp2rOcQabmE9DnIUCTywC3J9QCFsEr_QZqmU_X1eXMcUPSUTPlPU2dYjVI");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="events">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="A graduation ceremony with students in caps and gowns" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnTuqzwkUBIKlWVe_pD2Uid189rpG3HNIe8g4SYP1o6Jbj6ciTm6zHf8zw70FNjQaDnPB7tzv3GWPUzOWNwiBMEajKl_qoUGrOU84TEodHp249QWyxoiIOq-XfJ5tp3GS-fGow3kdvvNl_ETlhN8vNAXT0xzu-EeLPUmd3IkyxZsY-CHkS0SEENQYpc9Xzd0xZSWqxqPK1IM00p9Y0jMGrraWjEXrXcawOGWSt5VslUvoHVJziIK9sD0QFRQTwbDQkUIIm_vCp_gI");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="campus-life">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="Modern college campus building with a green lawn" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBX8RadEyIzTatsMGMLERTSyahu7WbA9SWKixGzeI-2jpSj9m24ocDwN-THm5ecVmrqDoSYVcqgcX8EldkHlyvlPksr9caehVTuIEmPQZ2oAqcU4qHVkS9uJRTOcPgvUKVVg3r1cNieggR9dNlfDpJC9Q9lO7CktJzc4Uv5Vjp9l5tAlWsH3h_2uX-GdY-PidT_okyIs_S70wgB04cLRaUmkDSCDup9t6WbQEcixKPnmPYaNDeBeVuH0mWCfGovk-lZJ4xs0ujkaZk");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="academics">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="Science students working in a laboratory" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7Q1spEF5HwmLGX53gtKLfAr9oE-UNlo7Kaz-Gh7IPzBxHSGcDBcgGzRPMtzALPmVF43fXhCHiQy_GvT44qvzr_8L4WGiqfm67L1EdgzLPkAC3G3SbG9XclZv1nWkuMnD06Ezg1KKFPHuebxcdpNdBlgv8G5A-XMdT39SIZJVaUv19Vi-uBzAZdaTLOXmRDUNPd2u9mFBAC6Yz506wVO5uD58b1j05mpVMCO2Ue3UizklcyyOe6mJqkFVYZsI9-5wqDOOxnYs0sh4");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="campus-life">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="College sports team celebrating a victory on a field" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSQ-__PTVfnDXGfvsjN4eqJ4h1tflYyLaQ_ZwkcgMFChVgJlhhI86tVhzGJaNCnxWwMdDpPEUsz0NQbq1zRbvB_gYLFkVgI8uibKKtj0Pgb0BKqFQStdT99KHinew50i0xkCOLdixHyoCfZbu81diE2xG0nlczr9i76jDeiGzflMYxFmo338DsvOYruITS4aozAdWDraEFxbjoWb4ici_MMcPbjq7mc68boHMOsJBj87o2GAZfHhxE4wOz1ZzZEcrGFnBlXGAdHjI");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="events">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="Students participating in a cultural event on stage" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTkM7mb2NUZ9dN9RGXTfr2wohXeB137cgReD2MiXcuKLUCEVLd6R6MtBZQo6LZKOhU48LDATeB07UC2bDstx9Rfvtt7nLsh9W0LzpGtQpqCN-wohFXh1Cl4XFVUL4g_66gR17tS9uxQgaXXUEwMrLSLV2ak1O3fRL-igb8J0zND24dhBDfw2FJqJGye-9dsiGpLCAGbESenPRX-LIs0iXkgPuaoiMZFeRvzSkMGfTJAzOCcsl9GPM-Fh8edRQIvIzk_cm_mvr3luQ");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="facilities">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="A well-equipped computer lab with students" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBN9yG8s8t-1l_RKFyr0X9-UtX3p8_Fch0pqBbzGEqbIaGwFV9zZtwl3i6YEQOX92sz8EV5tih_-SlFzFZrpSmd9Q1YbSn9nREc0_uOccsG2oSQKy9ih6irQAfyrAu3SItbgfrraiJE-NJAGqED1lJ5CLZ347-GjOU81n2sIrEg3_KNhjWTPo6SRfdDAgtHP6CvRRe7byBAGbfAq3s2mERMBzfW1M-k2NgGtQu6v2duwaOaAO6_Xna4tXy3s_INoqlG-c1IvXEgNlo");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="achievements">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="A student receiving an award on stage" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2PIfi-6JEVNq9zLcKbr49NIkIkhhhiWutN-cSnCVVBbw-x_dlW66Rzz9ajyK5m3MzSBkJ5qDzWgh5z2qxd3Oy32rguQnbaCMeAak2CTrQY3dep0TQo-HhoTw9ZHfvdG4ZNabLS7ny-MmdOcIbGOXTPI-KP55n7z2WgaOcwnmFVMLNXeYvKaeFfsl_mV2hyUUSMD4HfgvS4_WzN5X4AAoDBhjTgGSX7q88yvVDWPWZBHqj7rTxll_j9wNx_cLhnrKOUHyoijNKHr8");'></div>
-</div>
+  <div class="relative flex flex-col min-h-screen overflow-x-hidden">
+    <!-- ===== Navbar ===== -->
+    <header class="bg-background-light dark:bg-background-dark sticky top-0 z-20 border-b border-gray-200 dark:border-gray-800">
+      <div class="flex items-center justify-between px-4 py-3 md:px-8">
+        <a href="index.html" class="text-primary flex items-center gap-2">
+          <span class="material-symbols-outlined text-3xl">school</span>
+          <span class="font-bold text-lg">JK Engineering College</span>
+        </a>
 
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="academics">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="Students in a lecture hall" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaRFmdU2cf05vF54iPunhtJbbUY1l9YNFuszjVt7UDkxjP3ZfLqCOK0RoJTawNmEKdlbzoaia_SKOjwqmmT_v8hi0Av5Wr2vRWts0SAuvbla7plK5edw-4eze1ddKGnF35U3gIFub0SX6pQaKAOXo1rgEJdtCAbiVD7l4BZzB3NooCPT_ee2Ht9GAXwextlEqbpL2-gOHnjFuk3sj1Xgp2rOcQabmE9DnIUCTywC3J9QCFsEr_QZqmU_X1eXMcUPSUTPlPU2dYjVI");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="achievements">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="Student winning a trophy" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnTuqzwkUBIKlWVe_pD2Uid189rpG3HNIe8g4SYP1o6Jbj6ciTm6zHf8zw70FNjQaDnPB7tzv3GWPUzOWNwiBMEajKl_qoUGrOU84TEodHp249QWyxoiIOq-XfJ5tp3GS-fGow3kdvvNl_ETlhN8vNAXT0xzu-EeLPUmd3IkyxZsY-CHkS0SEENQYpc9Xzd0xZSWqxqPK1IM00p9Y0jMGrraWjEXrXcawOGWSt5VslUvoHVJziIK9sD0QFRQTwbDQkUIIm_vCp_gI");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="academics">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="Close-up of a science experiment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBX8RadEyIzTatsMGMLERTSyahu7WbA9SWKixGzeI-2jpSj9m24ocDwN-THm5ecVmrqDoSYVcqgcX8EldkHlyvlPksr9caehVTuIEmPQZ2oAqcU4qHVkS9uJRTOcPgvUKVVg3r1cNieggR9dNlfDpJC9Q9lO7CktJzc4Uv5Vjp9l5tAlWsH3h_2uX-GdY-PidT_okyIs_S70wgB04cLRaUmkDSCDup9t6WbQEcixKPnmPYaNDeBeVuH0mWCfGovk-lZJ4xs0ujkaZk");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="campus-life">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-1G00 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="Students walking on campus" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7Q1spEF5HwmLGX53gtKLfAr9oE-UNlo7Kaz-Gh7IPzBxHSGcDBcgGzRPMtzALPmVF43fXhCHiQy_GvT44qvzr_8L4WGiqfm67L1EdgzLPkAC3G3SbG9XclZv1nWkuMnD06Ezg1KKFPHuebxcdpNdBlgv8G5A-XMdT39SIZJVaUv19Vi-uBzAZdaTLOXmRDUNPd2u9mFBAC6Yz506wVO5uD58b1j05mpVMCO2Ue3UizklcyyOe6mJqkFVYZsI9-5wqDOOxnYs0sh4");'></div>
-</div>
-<div class="gallery-item group relative flex cursor-pointer flex-col gap-3 overflow-hidden rounded-xl shadow-lg" data-category="events">
-<div class="absolute inset-0 z-10 bg-black/40 group-hover:opacity-100 opacity-0 transition-opacity duration-300"></div>
-<div class="h-full w-full bg-center bg-no-repeat aspect-square bg-cover group-hover:scale-110 transition-transform duration-300" data-alt="A campus festival or event" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSQ-__PTVfnDXGfvsjN4eqJ4h1tflYyLaQ_ZwkcgMFChVgJlhhI86tVhzGJaNCnxWwMdDpPEUsz0NQbq1zRbvB_gYLFkVgI8uibKKtj0Pgb0BKqFQStdT99KHinew50i0xkCOLdixHyoCfZbu81diE2xG0nlczr9i76jDeiGzflMYxFmo338DsvOYruITS4aozAdWDraEFxbjoWb4ici_MMcPbjq7mc68boHMOsJBj87o2GAZfHhxE4wOz1ZzZEcrGFnBlXGAdHjI");'></div>
-</div>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Home</a>
+          <a href="about_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">About</a>
+          <a href="departments.html" class="text-primary dark:text-blue-300">Departments</a>
+          <a href="admissions.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Admissions</a>
+          <a href="gallery.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Gallery</a>
+          <a href="contact_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Contact</a>
+        </nav>
 
-</div>
-</main>
-<footer class="bg-primary text-white mt-16">
-<div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
-<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-<div>
-<a href="index.html" class="text-white text-xl font-bold">JK Engineering College</a>
-<p class="mt-4 max-w-xs text-slate-300">Fostering knowledge and innovation for a better future.</p>
-<ul class="mt-8 flex gap-6">
-<li><a class="text-slate-300 transition hover:opacity-75" href="#" rel="noreferrer" target="_blank">Facebook</a></li>
-<li><a class="text-slate-300 transition hover:opacity-75" href="#" rel="noreferrer" target="_blank">Twitter</a></li>
-<li><a class="text-slate-300 transition hover:opacity-75" href="#" rel="noreferrer" target="_blank">Instagram</a></li>
-</ul>
-</div>
-<div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-2">
-<div class="text-center sm:text-left">
-<p class="text-lg font-medium text-white">Academics</p>
-<ul class="mt-8 space-y-4 text-sm">
-<li><a class="text-slate-300 transition hover:opacity-75" href="departments.html">Programs</a></li>
-<li><a class="text-slate-300 transition hover:opacity-75" href="departments.html">Departments</a></li>
-<li><a class="text-slate-300 transition hover:opacity-75" href="departments.html">Research</a></li>
-</ul>
-</div>
-<div class="text-center sm:text-left">
-<p class="text-lg font-medium text-white">Admissions</p>
-<ul class="mt-8 space-y-4 text-sm">
-<li><a class="text-slate-300 transition hover:opacity-75" href="admissions.html">How to Apply</a></li>
-<li><a class="text-slate-300 transition hover:opacity-75" href="admissions.html">Tuition & Fees</a></li>
-<li><a class="text-slate-300 transition hover:opacity-75" href="contact_us.html">Visit Us</a></li>
-</ul>
-</div>
-<div class="text-center sm:text-left">
-<p class="text-lg font-medium text-white">Contact</p>
-<ul class="mt-8 space-y-4 text-sm">
-<li><a class="text-slate-300 transition hover:opacity-75" href="about_us.html">About Us</a></li>
-<li><a class="text-slate-300 transition hover:opacity-75" href="contact_us.html">Contact Us</a></li>
-<li><a class="text-slate-300 transition hover:opacity-75" href="#">Careers</a></li>
-</ul>
-</div>
-</div>
-</div>
-<p class="text-xs text-slate-400">© 2024. JK Engineering College. All rights reserved.</p>
-</div>
-</footer>
-</div>
+        <!-- Mobile Button -->
+        <button id="menu-btn" class="md:hidden flex items-center justify-center text-[#111318] dark:text-white">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const filters = document.querySelectorAll('.filter-chip');
-        const galleryItems = document.querySelectorAll('.gallery-item');
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="hidden flex-col bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 md:hidden">
+        <a href="index.html" class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white">Home</a>
+        <a href="about_us.html" class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white">About</a>
+        <a href="departments.html" class="px-4 py-3 text-primary dark:text-blue-300 bg-gray-100 dark:bg-gray-800">Departments</a>
+        <a href="admissions.html" class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white">Admissions</a>
+        <a href="gallery.html" class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white">Gallery</a>
+        <a href="contact_us.html" class="px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white">Contact</a>
+      </nav>
+    </header>
 
-        filters.forEach(filter => {
-            filter.addEventListener('click', () => {
-                const filterValue = filter.getAttribute('data-filter');
+    <!-- ===== Hero Section ===== -->
+    <section class="relative bg-cover bg-center bg-no-repeat h-[60vh] flex items-center justify-start px-6 md:px-10 text-white" 
+      style='background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)),url("https://lh3.googleusercontent.com/aida-public/AB6AXuD14zerW4F3l8V6ijGF4SUAfCMwh6dTzGgVmPlgW1JQzEChM8n8_tdZuGvsmt_V2VcnoKxikg9h1Soogy16ENbaukTQ_iiLR-x_qO7jH3nRrSF_uxJ9C5HhzCqAbHOwmJUL7-f8GEMhj8UDN-uEfE2jbJagvfZSpyr0W4eYBXv7eE7Xj70OKbCrRARsjFrtQ9g3EdajzqR1pePXIwydShCaZ85Jwhu-hjj0MVAacGl3rAgmc-EzQ7qFEGH6zj6SFFTUUuL_iLe13bg");'>
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-black mb-2">Department of Computer Science</h1>
+        <p class="text-lg">Shaping the future of technology and innovation.</p>
+      </div>
+    </section>
 
-                // Update chip styles
-                filters.forEach(f => {
-                    f.classList.remove('active');
-                    f.classList.add('inactive');
-                });
-                filter.classList.remove('inactive');
-                filter.classList.add('active');
+    <!-- ===== About Section ===== -->
+    <main class="flex-grow">
+      <section id="about" class="py-10 px-6 md:px-10 bg-background-light dark:bg-background-dark">
+        <h2 class="text-3xl font-bold text-[#111318] dark:text-white mb-4">About the Department</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-3">
+          Welcome to the Department of Computer Science. Our mission is to advance the frontiers of computing and to educate the next generation of leaders in technology and research through a rigorous, hands-on curriculum.
+        </p>
+        <p class="text-gray-700 dark:text-gray-300">
+          Founded in 1985, our department has a rich history of innovation, consistently ranking among the top computer science programs in the nation. We are committed to fostering a diverse and inclusive environment where creativity and collaboration thrive.
+        </p>
+      </section>
 
-                // Filter gallery items
-                galleryItems.forEach(item => {
-                    const itemCategory = item.getAttribute('data-category');
-                    
-                    if (filterValue === 'all' || filterValue === itemCategory) {
-                        item.style.display = 'block'; // Or 'flex', 'grid' if you use them
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
+      <!-- ===== Programs Section ===== -->
+      <section id="courses" class="py-10 px-6 md:px-10 bg-background-light dark:bg-background-dark">
+        <h2 class="text-3xl font-bold text-[#111318] dark:text-white mb-6">Programs Offered</h2>
+        <div class="space-y-4">
+          <details class="group bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+            <summary class="flex justify-between cursor-pointer text-base font-bold text-primary dark:text-blue-300">
+              B.S. in Computer Science
+              <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+            </summary>
+            <p class="mt-3 text-sm text-gray-700 dark:text-gray-300">
+              Covers algorithms, data structures, and software engineering. Duration: 4 years.
+            </p>
+          </details>
+          <details class="group bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+            <summary class="flex justify-between cursor-pointer text-base font-bold text-primary dark:text-blue-300">
+              M.S. in Artificial Intelligence
+              <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+            </summary>
+            <p class="mt-3 text-sm text-gray-700 dark:text-gray-300">
+              Focus on machine learning, NLP, and computer vision. Duration: 2 years.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-primary text-white py-10 mt-16">
+      <div class="max-w-screen-xl mx-auto px-6 space-y-6">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div>
+            <h3 class="text-xl font-bold">JK Engineering College</h3>
+            <p class="mt-2 text-slate-300 max-w-sm">
+              Fostering knowledge and innovation for a better future.
+            </p>
+          </div>
+          <div class="flex gap-8 mt-6 md:mt-0">
+            <div>
+              <h4 class="font-bold mb-2">Academics</h4>
+              <ul class="space-y-1 text-slate-300 text-sm">
+                <li><a href="departments.html" class="hover:opacity-75">Programs</a></li>
+                <li><a href="departments.html" class="hover:opacity-75">Departments</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold mb-2">Admissions</h4>
+              <ul class="space-y-1 text-slate-300 text-sm">
+                <li><a href="admissions.html" class="hover:opacity-75">How to Apply</a></li>
+                <li><a href="contact_us.html" class="hover:opacity-75">Visit Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="text-xs text-slate-400 text-center">© 2024 JK Engineering College. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===== JS: Mobile Menu Toggle ===== -->
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      const icon = menuBtn.querySelector(".material-symbols-outlined");
+      icon.textContent = mobileMenu.classList.contains("hidden") ? "menu" : "close";
     });
-</script>
-
-</body></html>
+  </script>
+</body>
+</html>
