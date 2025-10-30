@@ -1,199 +1,202 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en" class="light">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Academic Departments - JK Engineering College</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        primary: "#0d40a5",
-        "background-light": "#f8f9fa",
-        "background-dark": "#101622",
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Departments - JK Engineering College</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0d40a5",
+            "background-light": "#f8f9fa",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            display: ["Public Sans", "sans-serif"],
+          },
+        },
       },
-      fontFamily: {
-        display: ["Public Sans", "sans-serif"],
-      },
-      borderRadius: {
-        "DEFAULT": "0.25rem",
-        "lg": "0.5rem",
-        "xl": "0.75rem",
-        "full": "9999px"
-      },
-    },
-  },
-};
-</script>
-<style>
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
-</style>
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      min-height: 100vh;
+    }
+  </style>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
-<!-- HEADER -->
-<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-sm">
-  <div class="flex items-center p-4 justify-between max-w-7xl mx-auto">
-    <a href="index.html" class="flex items-center gap-3">
-      <span class="material-symbols-outlined text-primary text-3xl">school</span>
-      <h2 class="text-gray-900 dark:text-white text-lg font-bold hidden sm:block">JK Engineering College</h2>
-    </a>
+    <!-- Header with responsive menu -->
+    <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
+      <div class="flex items-center p-4 justify-between max-w-7xl mx-auto">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-3xl">school</span>
+          <h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">JK Engineering College</h2>
+        </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-      <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Home</a>
-      <a href="about_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">About</a>
-      <a href="departments.html" class="text-primary dark:text-blue-300">Departments</a>
-      <a href="admissions.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Admissions</a>
-      <a href="gallery.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Gallery</a>
-      <a href="contact_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Contact</a>
-    </nav>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-4 text-sm font-medium">
+          <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Home</a>
+          <a href="about_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">About</a>
+          <a href="departments.html" class="text-primary dark:text-blue-300">Departments</a>
+          <a href="admissions.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Admissions</a>
+          <a href="gallery.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Gallery</a>
+          <a href="contact_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary">Contact</a>
+        </nav>
 
-    <!-- Mobile Menu Button -->
-    <button id="menu-btn" class="md:hidden flex items-center justify-end">
-      <span class="material-symbols-outlined text-gray-800 dark:text-gray-200 text-3xl">menu</span>
-    </button>
-  </div>
-</header>
-
-<!-- MOBILE SIDEBAR MENU -->
-<div id="mobile-overlay" class="fixed inset-0 bg-black/50 hidden"></div>
-<div id="mobile-nav" class="fixed top-0 right-0 w-64 h-full bg-white dark:bg-gray-900 shadow-lg transform translate-x-full transition-transform duration-300 z-50">
-  <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-    <h3 class="text-lg font-bold text-gray-900 dark:text-white">Menu</h3>
-    <button id="close-btn">
-      <span class="material-symbols-outlined text-gray-700 dark:text-gray-300 text-2xl">close</span>
-    </button>
-  </div>
-  <nav class="flex flex-col space-y-4 p-4 text-gray-700 dark:text-gray-300 font-medium">
-    <a href="index.html" class="hover:text-primary">Home</a>
-    <a href="about_us.html" class="hover:text-primary">About</a>
-    <a href="departments.html" class="text-primary">Departments</a>
-    <a href="admissions.html" class="hover:text-primary">Admissions</a>
-    <a href="gallery.html" class="hover:text-primary">Gallery</a>
-    <a href="contact_us.html" class="hover:text-primary">Contact</a>
-  </nav>
-</div>
-
-<!-- MAIN CONTENT -->
-<main class="flex-1">
-  <div class="px-4 pt-10 pb-6 max-w-7xl mx-auto">
-    <h1 class="text-gray-900 dark:text-white tracking-tight text-[32px] sm:text-4xl font-bold leading-tight">
-      Explore Our Academic Departments
-    </h1>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-7xl mx-auto">
-    <!-- Example Department Card -->
-    <a class="group flex flex-1 flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1" href="department_detail.html">
-      <span class="material-symbols-outlined text-primary text-3xl">code_blocks</span>
-      <div class="flex flex-col gap-1">
-        <h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Computer Science</h2>
-        <p class="text-gray-500 dark:text-gray-400 text-sm">Innovating the future of technology and software.</p>
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden flex items-center justify-center text-gray-800 dark:text-gray-200 text-3xl">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
       </div>
-    </a>
 
-    <a class="group flex flex-1 flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1" href="department_detail.html">
-      <span class="material-symbols-outlined text-primary text-3xl">engineering</span>
-      <div class="flex flex-col gap-1">
-        <h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Engineering</h2>
-        <p class="text-gray-500 dark:text-gray-400 text-sm">Building the world of tomorrow with practical solutions.</p>
-      </div>
-    </a>
+      <!-- Mobile Navigation -->
+      <nav id="mobile-nav" class="hidden flex-col space-y-1 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-700">
+        <a href="index.html" class="block px-6 py-3 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+        <a href="about_us.html" class="block px-6 py-3 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+        <a href="departments.html" class="block px-6 py-3 text-primary dark:text-blue-300 bg-gray-100 dark:bg-gray-800">Departments</a>
+        <a href="admissions.html" class="block px-6 py-3 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Admissions</a>
+        <a href="gallery.html" class="block px-6 py-3 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Gallery</a>
+        <a href="contact_us.html" class="block px-6 py-3 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+      </nav>
+    </header>
 
-    <a class="group flex flex-1 flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1" href="department_detail.html">
-      <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
-      <div class="flex flex-col gap-1">
-        <h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Social Sciences</h2>
-        <p class="text-gray-500 dark:text-gray-400 text-sm">Understanding societies and human behavior.</p>
+    <!-- Main Content -->
+    <main class="flex-1">
+      <div class="px-4 pt-10 pb-6 max-w-7xl mx-auto">
+        <h1 class="text-gray-900 dark:text-white text-[32px] sm:text-4xl font-bold leading-tight text-left">
+          Explore Our Academic Departments
+        </h1>
       </div>
-    </a>
 
-    <a class="group flex flex-1 flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1" href="department_detail.html">
-      <span class="material-symbols-outlined text-primary text-3xl">local_pharmacy</span>
-      <div class="flex flex-col gap-1">
-        <h2 class="text-gray-900 dark:text-white text-base font-bold leading-tight">Health & Medicine</h2>
-        <p class="text-gray-500 dark:text-gray-400 text-sm">Preparing the future of healthcare professionals.</p>
-      </div>
-    </a>
-  </div>
-</main>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-7xl mx-auto">
+        <!-- Department Cards -->
+        <a href="department_detail.html" class="group flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="material-symbols-outlined text-primary text-3xl">code_blocks</span>
+          <div>
+            <h2 class="text-gray-900 dark:text-white text-base font-bold">Computer Science</h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">Innovating the future of technology and software.</p>
+          </div>
+        </a>
 
-<!-- FOOTER -->
-<footer class="bg-primary text-white mt-16">
-  <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-      <div>
-        <a href="index.html" class="text-white text-xl font-bold">JK Engineering College</a>
-        <p class="mt-4 max-w-xs text-slate-300">Fostering knowledge and innovation for a better future.</p>
-        <ul class="mt-8 flex gap-6">
-          <li><a class="text-slate-300 transition hover:opacity-75" href="#">Facebook</a></li>
-          <li><a class="text-slate-300 transition hover:opacity-75" href="#">Twitter</a></li>
-          <li><a class="text-slate-300 transition hover:opacity-75" href="#">Instagram</a></li>
-        </ul>
+        <a href="department_detail.html" class="group flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="material-symbols-outlined text-primary text-3xl">business_center</span>
+          <div>
+            <h2 class="text-gray-900 dark:text-white text-base font-bold">Commerce & Business</h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">Shaping the next generation of business leaders.</p>
+          </div>
+        </a>
+
+        <a href="department_detail.html" class="group flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="material-symbols-outlined text-primary text-3xl">draw</span>
+          <div>
+            <h2 class="text-gray-900 dark:text-white text-base font-bold">Arts & Humanities</h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">Exploring human culture, creativity, and history.</p>
+          </div>
+        </a>
+
+        <a href="department_detail.html" class="group flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="material-symbols-outlined text-primary text-3xl">biotech</span>
+          <div>
+            <h2 class="text-gray-900 dark:text-white text-base font-bold">Life Sciences</h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">Advancing knowledge in biology and health.</p>
+          </div>
+        </a>
+
+        <a href="department_detail.html" class="group flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="material-symbols-outlined text-primary text-3xl">engineering</span>
+          <div>
+            <h2 class="text-gray-900 dark:text-white text-base font-bold">Engineering</h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">Building the world of tomorrow with practical solutions.</p>
+          </div>
+        </a>
+
+        <a href="department_detail.html" class="group flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="material-symbols-outlined text-primary text-3xl">gavel</span>
+          <div>
+            <h2 class="text-gray-900 dark:text-white text-base font-bold">Law & Justice</h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">Upholding principles of justice and legal ethics.</p>
+          </div>
+        </a>
+
+        <a href="department_detail.html" class="group flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+          <div>
+            <h2 class="text-gray-900 dark:text-white text-base font-bold">Social Sciences</h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">Understanding societies and human behavior.</p>
+          </div>
+        </a>
+
+        <a href="department_detail.html" class="group flex flex-col gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+          <span class="material-symbols-outlined text-primary text-3xl">local_pharmacy</span>
+          <div>
+            <h2 class="text-gray-900 dark:text-white text-base font-bold">Health & Medicine</h2>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">Preparing the future of healthcare professionals.</p>
+          </div>
+        </a>
       </div>
-      <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-2">
-        <div>
-          <p class="text-lg font-medium text-white">Academics</p>
-          <ul class="mt-8 space-y-4 text-sm">
-            <li><a class="text-slate-300 hover:opacity-75" href="departments.html">Programs</a></li>
-            <li><a class="text-slate-300 hover:opacity-75" href="departments.html">Departments</a></li>
-            <li><a class="text-slate-300 hover:opacity-75" href="#">Research</a></li>
-          </ul>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white mt-16">
+      <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <div>
+            <a href="index.html" class="text-white text-xl font-bold">JK Engineering College</a>
+            <p class="mt-4 max-w-xs text-slate-300">Fostering knowledge and innovation for a better future.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-2">
+            <div>
+              <p class="text-lg font-medium text-white">Academics</p>
+              <ul class="mt-8 space-y-4 text-sm">
+                <li><a href="departments.html" class="text-slate-300 hover:opacity-75">Programs</a></li>
+                <li><a href="departments.html" class="text-slate-300 hover:opacity-75">Departments</a></li>
+                <li><a href="departments.html" class="text-slate-300 hover:opacity-75">Research</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-lg font-medium text-white">Admissions</p>
+              <ul class="mt-8 space-y-4 text-sm">
+                <li><a href="admissions.html" class="text-slate-300 hover:opacity-75">How to Apply</a></li>
+                <li><a href="admissions.html" class="text-slate-300 hover:opacity-75">Tuition & Fees</a></li>
+                <li><a href="contact_us.html" class="text-slate-300 hover:opacity-75">Visit Us</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-lg font-medium text-white">Contact</p>
+              <ul class="mt-8 space-y-4 text-sm">
+                <li><a href="about_us.html" class="text-slate-300 hover:opacity-75">About Us</a></li>
+                <li><a href="contact_us.html" class="text-slate-300 hover:opacity-75">Contact Us</a></li>
+                <li><a href="#" class="text-slate-300 hover:opacity-75">Careers</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div>
-          <p class="text-lg font-medium text-white">Admissions</p>
-          <ul class="mt-8 space-y-4 text-sm">
-            <li><a class="text-slate-300 hover:opacity-75" href="admissions.html">How to Apply</a></li>
-            <li><a class="text-slate-300 hover:opacity-75" href="#">Tuition & Fees</a></li>
-            <li><a class="text-slate-300 hover:opacity-75" href="contact_us.html">Visit Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="text-lg font-medium text-white">Contact</p>
-          <ul class="mt-8 space-y-4 text-sm">
-            <li><a class="text-slate-300 hover:opacity-75" href="about_us.html">About Us</a></li>
-            <li><a class="text-slate-300 hover:opacity-75" href="contact_us.html">Contact Us</a></li>
-            <li><a class="text-slate-300 hover:opacity-75" href="#">Careers</a></li>
-          </ul>
-        </div>
+        <p class="text-xs text-slate-400">© 2025 JK Engineering College. All rights reserved.</p>
       </div>
-    </div>
-    <p class="text-xs text-slate-400">© 2025 JK Engineering College. All rights reserved.</p>
+    </footer>
   </div>
-</footer>
-</div>
 
-<!-- MOBILE MENU SCRIPT -->
-<script>
-const menuBtn = document.getElementById('menu-btn');
-const mobileNav = document.getElementById('mobile-nav');
-const overlay = document.getElementById('mobile-overlay');
-const closeBtn = document.getElementById('close-btn');
-
-menuBtn.addEventListener('click', () => {
-  mobileNav.classList.remove('translate-x-full');
-  overlay.classList.remove('hidden');
-});
-closeBtn.addEventListener('click', () => {
-  mobileNav.classList.add('translate-x-full');
-  overlay.classList.add('hidden');
-});
-overlay.addEventListener('click', () => {
-  mobileNav.classList.add('translate-x-full');
-  overlay.classList.add('hidden');
-});
-</script>
+  <!-- Mobile Nav Toggle Script -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
