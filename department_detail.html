@@ -1,225 +1,239 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Computer Science - JK Engineering College</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- Tailwind Config -->
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
-            primary: "#0d40a5",
+            "primary": "#001f3f",
+            "secondary": "#D4AF37",
             "background-light": "#f6f6f8",
             "background-dark": "#101622",
+            "text-light": "#111318",
+            "text-dark": "#f6f6f8",
+            "card-light": "#ffffff",
+            "card-dark": "#1a2233"
           },
           fontFamily: {
-            display: ["Public Sans", "sans-serif"],
-          },
-        },
-      },
-    };
-  </script>
-  <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            "display": ["Public Sans", "sans-serif"]
+          }
+        }
+      }
     }
-  </style>
+  </script>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display overflow-x-hidden">
-  <!-- Navbar -->
-  <header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800">
-    <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3">
-      <a href="index.html" class="flex items-center text-primary font-bold text-lg gap-2">
-        <span class="material-symbols-outlined text-3xl">school</span>
-        JK Engineering College
-      </a>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
 
-      <!-- Desktop Menu -->
-      <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="index.html" class="hover:text-primary text-gray-700 dark:text-gray-300">Home</a>
-        <a href="about_us.html" class="hover:text-primary text-gray-700 dark:text-gray-300">About</a>
-        <a href="departments.html" class="text-primary dark:text-blue-300 font-semibold">Departments</a>
-        <a href="admissions.html" class="hover:text-primary text-gray-700 dark:text-gray-300">Admissions</a>
-        <a href="gallery.html" class="hover:text-primary text-gray-700 dark:text-gray-300">Gallery</a>
-        <a href="contact_us.html" class="hover:text-primary text-gray-700 dark:text-gray-300">Contact</a>
+    <!-- HEADER -->
+    <header
+      class="sticky top-0 z-50 flex items-center bg-card-light/80 dark:bg-card-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-700">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary dark:text-secondary text-3xl">school</span>
+          <h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">JK Engineering College</h2>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-4 text-sm font-medium">
+        <a href="index.html"
+          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Home</a>
+        <a href="about_us.html"
+          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">About</a>
+        <a href="departments.html" class="text-primary dark:text-secondary font-bold">Departments</a>
+        <a href="admissions.html"
+          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Admissions</a>
+        <a href="gallery.html"
+          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Gallery</a>
+        <a href="contact_us.html"
+          class="text-text-light/70 dark:text-text-dark/70 hover:text-primary dark:hover:text-secondary">Contact</a>
       </nav>
 
       <!-- Mobile Menu Button -->
-      <button id="menu-btn" class="md:hidden text-gray-800 dark:text-white">
-        <span class="material-symbols-outlined text-3xl">menu</span>
-      </button>
-    </div>
-
-    <!-- Mobile Sidebar -->
-    <div id="mobile-nav"
-      class="fixed top-0 right-[-100%] w-64 h-full bg-white dark:bg-gray-900 shadow-lg transition-all duration-300 z-40 md:hidden">
-      <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
-        <h2 class="text-lg font-bold text-primary">Menu</h2>
-        <button id="close-btn">
-          <span class="material-symbols-outlined text-2xl text-gray-700 dark:text-white">close</span>
+      <div class="flex items-center justify-end md:hidden">
+        <button id="menu-btn"
+          class="flex cursor-pointer items-center justify-center rounded-lg h-10 w-10 bg-transparent text-text-light dark:text-text-dark">
+          <span class="material-symbols-outlined text-2xl">menu</span>
         </button>
       </div>
-      <nav class="flex flex-col space-y-3 p-4 text-gray-800 dark:text-gray-300">
-        <a href="index.html" class="hover:text-primary">Home</a>
-        <a href="about_us.html" class="hover:text-primary">About</a>
-        <a href="departments.html" class="text-primary font-semibold">Departments</a>
-        <a href="admissions.html" class="hover:text-primary">Admissions</a>
-        <a href="gallery.html" class="hover:text-primary">Gallery</a>
-        <a href="contact_us.html" class="hover:text-primary">Contact</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="relative bg-cover bg-center bg-no-repeat h-[400px] flex items-end"
-    style='background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD14zerW4F3l8V6ijGF4SUAfCMwh6dTzGgVmPlgW1JQzEChM8n8_tdZuGvsmt_V2VcnoKxikg9h1Soogy16ENbaukTQ_iiLR-x_qO7jH3nRrSF_uxJ9C5HhzCqAbHOwmJUL7-f8GEMhj8UDN-uEfE2jbJagvfZSpyr0W4eYBXv7eE7Xj70OKbCrRARsjFrtQ9g3EdajzqR1pePXIwydShCaZ85Jwhu-hjj0MVAacGl3rAgmc-EzQ7qFEGH6zj6SFFTUUuL_iLe13bg");'>
-    <div class="text-white px-6 pb-10">
-      <h1 class="text-4xl md:text-5xl font-extrabold">Department of Computer Science</h1>
-      <p class="text-lg mt-2">Shaping the future of technology and innovation.</p>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-10 max-w-screen-lg mx-auto px-6">
-    <h2 class="text-3xl font-bold text-[#111318] dark:text-white mb-4">About the Department</h2>
-    <p class="text-gray-700 dark:text-gray-300 mb-3">
-      Welcome to the Department of Computer Science. Our mission is to advance the frontiers of computing and to educate
-      the next generation of leaders in technology and research through a rigorous, hands-on curriculum.
-    </p>
-    <p class="text-gray-700 dark:text-gray-300">
-      Founded in 1985, our department has a rich history of innovation, consistently ranking among the top programs in
-      the nation. We are committed to fostering a diverse and inclusive environment where creativity and collaboration
-      thrive.
-    </p>
-  </section>
-
-  <!-- Courses -->
-  <section id="courses" class="py-10 bg-background-light dark:bg-background-dark px-6 max-w-screen-lg mx-auto">
-    <h2 class="text-3xl font-bold text-[#111318] dark:text-white mb-4">Programs Offered</h2>
-
-    <details class="group bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm mb-3">
-      <summary class="flex justify-between cursor-pointer font-semibold text-primary dark:text-blue-300">
-        B.S. in Computer Science
-        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-      </summary>
-      <p class="mt-3 text-gray-700 dark:text-gray-300">Covers algorithms, data structures, and software engineering. Duration: 4 years.</p>
-    </details>
-
-    <details class="group bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm mb-3">
-      <summary class="flex justify-between cursor-pointer font-semibold text-primary dark:text-blue-300">
-        M.S. in Artificial Intelligence
-        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-      </summary>
-      <p class="mt-3 text-gray-700 dark:text-gray-300">Focuses on machine learning, NLP, and computer vision. Duration: 2 years.</p>
-    </details>
-
-    <details class="group bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
-      <summary class="flex justify-between cursor-pointer font-semibold text-primary dark:text-blue-300">
-        Ph.D. in Cybersecurity
-        <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
-      </summary>
-      <p class="mt-3 text-gray-700 dark:text-gray-300">Dedicated to research in information security and privacy. Duration: 4–5 years.</p>
-    </details>
-  </section>
-
-  <!-- Faculty -->
-  <section id="faculty" class="py-10 max-w-screen-lg mx-auto px-6">
-    <h2 class="text-3xl font-bold text-[#111318] dark:text-white mb-4">Our Esteemed Faculty</h2>
-    <div class="grid gap-6 sm:grid-cols-2">
-      <div class="flex gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBtajyWoWB1IyIO0X1_tuwvbq9O9kV2HD4DEWkLctOyMGQh8Ys0uafxvpD3_w96Gf2PHdUpUnxyv8o9fL7NC5IjZZ7sE8s6oUIe0Omykfo4I6opWOi8uUl4rk05iA-GG1VB2SMvnh4G11jSbI-voMnTwQQWTzlT1heJoqgCxYDmKlopN695PIyBFhcnIH0ufm9iH1IucGOeit6Hqkfjgd8mI1WOOOfKO8g81Wll6txeUCW8Aa9opm_RvpFcOwy269gZFOtS7IsfYs"
-          alt="Dr. Alan Grant" class="h-20 w-20 rounded-full object-cover" />
-        <div>
-          <h3 class="font-bold text-lg text-[#111318] dark:text-white">Dr. Alan Grant</h3>
-          <p class="text-primary dark:text-blue-300 text-sm font-semibold">Professor & Department Chair</p>
-          <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">Specializes in algorithms and ethical AI.</p>
-        </div>
-      </div>
-      <div class="flex gap-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAp7dvXIYLhjN8vJUbh5AWnh0czf56shrhzHVfEbdA7SPpj1fzUNFiPO_T-ABxwJ4LD8U442Ri5DqFYqtXta7o4DReLp5c_z6WCEQqUgMKhA_tcbxWs-xD-W5mrYA4oBV612vkrG4P0L841KqnAOTXLUDhKoZ7U8GJV8X5uV0zPj7vypYMOmh2CpWi7u0M9-KUXGPBZ3XTQ5qSVlUMLHswRCANzh14aW3so1KZt_5FgW5XiUJ9NwjPwT9NbbD91zjhxIz_NK4m4sk"
-          alt="Dr. Ellie Sattler" class="h-20 w-20 rounded-full object-cover" />
-        <div>
-          <h3 class="font-bold text-lg text-[#111318] dark:text-white">Dr. Ellie Sattler</h3>
-          <p class="text-primary dark:text-blue-300 text-sm font-semibold">Associate Professor</p>
-          <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">Expert in UX design and accessibility.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Facilities -->
-  <section id="facilities" class="py-10 bg-background-light dark:bg-background-dark px-6 max-w-screen-lg mx-auto">
-    <h2 class="text-3xl font-bold text-[#111318] dark:text-white mb-4">Facilities & Resources</h2>
-    <div class="overflow-hidden rounded-lg shadow-sm">
-      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeiz9F5nfyUD8aYAxeNaeIFpr5lYhyZfuYUsEWyIz4eanfhNeyYxKu8TwUj1Byt_K2OY4M8LhR2QrmfA0RSqyRmvhvERGvqDZrgdTPIekY26POwLvBjTCytBWluX7F1qBW0QpGFZiUp4qYO-wm9jSGYSswPvu3fw9elQsqfFI2d9WWxjp_swX2pU36VRCtANC5vG7XKrnoX0VrKKDjh7A2S89pPe_E1UW6hAIHSIdIPkXbChLm37fYg0gBM2f2gd4OhSH9o-uuEqU"
-        alt="Robotics Lab" class="h-64 w-full object-cover" />
-      <div class="p-4 bg-white dark:bg-gray-800">
-        <h3 class="text-lg font-bold text-[#111318] dark:text-white">Robotics & AI Lab</h3>
-        <p class="text-gray-700 dark:text-gray-300 text-sm mt-1">Equipped for research in AI and autonomous systems.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="bg-primary/20 dark:bg-primary/30 py-12 text-center">
-    <h2 class="text-2xl font-bold text-[#111318] dark:text-white">Ready to Shape the Future?</h2>
-    <p class="mt-2 text-gray-700 dark:text-gray-300">Join our community of innovators today.</p>
-    <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav"
+      class="hidden md:hidden flex-col bg-card-light dark:bg-card-dark absolute top-[64px] left-0 w-full shadow-lg border-t border-gray-200 dark:border-gray-700 z-40">
+      <a href="index.html"
+        class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+      <a href="about_us.html"
+        class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+      <a href="departments.html"
+        class="block px-6 py-3 text-primary dark:text-secondary font-bold bg-gray-100 dark:bg-gray-800">Departments</a>
       <a href="admissions.html"
-        class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition">Apply Now</a>
+        class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Admissions</a>
+      <a href="gallery.html"
+        class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Gallery</a>
       <a href="contact_us.html"
-        class="border border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition">Request
-        Info</a>
-    </div>
-  </section>
+        class="block px-6 py-3 text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+    </nav>
 
-  <!-- Footer -->
-  <footer class="bg-primary text-white mt-16">
-    <div class="max-w-screen-xl mx-auto px-6 py-10">
-      <div class="grid md:grid-cols-3 gap-8">
-        <div>
-          <h3 class="font-bold text-lg mb-2">JK Engineering College</h3>
-          <p class="text-sm text-slate-300">Fostering knowledge and innovation for a better future.</p>
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+
+      <!-- Hero Section -->
+      <section class="relative bg-cover bg-center bg-no-repeat h-[400px] flex items-end"
+        style='background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80");'>
+        <div class="text-white px-6 pb-10">
+          <h1 class="text-4xl md:text-5xl font-extrabold">Department of Computer Science</h1>
+          <p class="text-lg mt-2">Shaping the future of technology and innovation.</p>
         </div>
-        <div>
-          <h4 class="font-semibold mb-2">Academics</h4>
-          <ul class="text-slate-300 space-y-1 text-sm">
-            <li><a href="departments.html" class="hover:underline">Programs</a></li>
-            <li><a href="departments.html" class="hover:underline">Departments</a></li>
-            <li><a href="departments.html" class="hover:underline">Research</a></li>
-          </ul>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-10 max-w-screen-lg mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4">About the Department</h2>
+        <p class="mb-3">
+          Welcome to the Department of Computer Science. Our mission is to advance the frontiers of computing and to
+          educate
+          the next generation of leaders in technology and research through a rigorous, hands-on curriculum.
+        </p>
+        <p>
+          Founded in 1985, our department has a rich history of innovation, consistently ranking among the top programs
+          in
+          the nation. We are committed to fostering a diverse and inclusive environment where creativity and
+          collaboration
+          thrive.
+        </p>
+      </section>
+
+      <!-- Programs Offered -->
+      <section id="courses" class="py-10 bg-background-light dark:bg-background-dark px-6 max-w-screen-lg mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Programs Offered</h2>
+
+        <details class="group bg-card-light dark:bg-card-dark rounded-lg p-4 shadow-sm mb-3">
+          <summary class="flex justify-between cursor-pointer font-semibold text-primary dark:text-secondary">
+            B.S. in Computer Science
+            <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3">Covers algorithms, data structures, and software engineering. Duration: 4 years.</p>
+        </details>
+
+        <details class="group bg-card-light dark:bg-card-dark rounded-lg p-4 shadow-sm mb-3">
+          <summary class="flex justify-between cursor-pointer font-semibold text-primary dark:text-secondary">
+            M.S. in Artificial Intelligence
+            <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3">Focuses on machine learning, NLP, and computer vision. Duration: 2 years.</p>
+        </details>
+
+        <details class="group bg-card-light dark:bg-card-dark rounded-lg p-4 shadow-sm">
+          <summary class="flex justify-between cursor-pointer font-semibold text-primary dark:text-secondary">
+            Ph.D. in Cybersecurity
+            <span class="material-symbols-outlined transition group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-3">Dedicated to research in information security and privacy. Duration: 4–5 years.</p>
+        </details>
+      </section>
+
+      <!-- Faculty Section -->
+      <section id="faculty" class="py-10 max-w-screen-lg mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4">Our Esteemed Faculty</h2>
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="flex gap-4 bg-card-light dark:bg-card-dark p-4 rounded-lg shadow-sm">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Dr. Alan Grant"
+              class="h-20 w-20 rounded-full object-cover" />
+            <div>
+              <h3 class="font-bold text-lg">Dr. Alan Grant</h3>
+              <p class="text-primary dark:text-secondary text-sm font-semibold">Professor & Department Chair</p>
+              <p class="mt-1 text-sm">Specializes in algorithms and ethical AI.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 bg-card-light dark:bg-card-dark p-4 rounded-lg shadow-sm">
+            <img src="https://randomuser.me/api/portraits/women/47.jpg" alt="Dr. Ellie Sattler"
+              class="h-20 w-20 rounded-full object-cover" />
+            <div>
+              <h3 class="font-bold text-lg">Dr. Ellie Sattler</h3>
+              <p class="text-primary dark:text-secondary text-sm font-semibold">Associate Professor</p>
+              <p class="mt-1 text-sm">Expert in UX design and accessibility.</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4 class="font-semibold mb-2">Contact</h4>
-          <ul class="text-slate-300 space-y-1 text-sm">
-            <li><a href="contact_us.html" class="hover:underline">Contact Us</a></li>
-            <li><a href="#" class="hover:underline">Careers</a></li>
-          </ul>
+      </section>
+
+      <!-- Facilities Section -->
+      <section id="facilities" class="py-10 bg-background-light dark:bg-background-dark px-6 max-w-screen-lg mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Facilities & Resources</h2>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1200&q=80"
+            alt="Robotics Lab" class="h-64 w-full object-cover" />
+          <div class="p-4 bg-card-light dark:bg-card-dark">
+            <h3 class="text-lg font-bold">Robotics & AI Lab</h3>
+            <p class="text-sm mt-1">Equipped for research in AI and autonomous systems.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="bg-primary/10 dark:bg-primary/30 py-12 text-center">
+        <h2 class="text-2xl font-bold">Ready to Shape the Future?</h2>
+        <p class="mt-2">Join our community of innovators today.</p>
+
+        <div class="mt-6 flex flex-row sm:flex-row justify-center gap-2">
+          <a href="admissions.html"
+            class="bg-primary text-white px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-blue-800 transition w-fit mx-auto sm:mx-0">
+            Apply Now
+          </a>
+          <a href="contact_us.html"
+            class="border border-primary text-primary px-6 py-2 sm:py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition w-fit mx-auto sm:mx-0">
+            Request Info
+          </a>
+        </div>
+      </section>
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white mt-8">
+      <div class="p-8">
+        <div class="flex flex-col gap-4">
+          <h4 class="font-bold text-lg">JK Engineering College</h4>
+          <p class="text-sm text-white/80">123 University Lane, Springfield, USA</p>
+          <p class="text-sm text-white/80">(123) 456-7890</p>
+        </div>
+
+        <div class="border-t border-white/20 mt-6 pt-6 text-center text-xs text-white/60">
+          <p>© 2025 JK Engineering College. All Rights Reserved.</p>
+          <a class="underline hover:text-white" href="#">Privacy Policy</a> |
+          <a class="underline hover:text-white" href="contact_us.html">Contact Us</a>
         </div>
       </div>
-      <div class="text-center text-xs text-slate-400 mt-6">© 2025 JK Engineering College. All rights reserved.</div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Mobile Nav Script -->
+  </div>
+
+  <!-- Mobile Nav Toggle -->
   <script>
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileNav = document.getElementById("mobile-nav");
-    const closeBtn = document.getElementById("close-btn");
-
-    menuBtn.addEventListener("click", () => {
-      mobileNav.style.right = "0";
-    });
-
-    closeBtn.addEventListener("click", () => {
-      mobileNav.style.right = "-100%";
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
     });
   </script>
 </body>
+
 </html>
