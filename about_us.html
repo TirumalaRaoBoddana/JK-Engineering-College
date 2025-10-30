@@ -1,217 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - JK Engineering College</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#0d40a5",
-              "background-light": "#f8f9fa",
-              "background-dark": "#101622",
-              secondary: {
-                gold: "#D4AF37",
-              },
-            },
-            fontFamily: {
-              display: ["Public Sans", "sans-serif"],
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - JK Engineering College</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#0d40a5",
+            "background-light": "#f8f9fa",
+            "background-dark": "#101622",
+            secondary: {
+              gold: "#D4AF37",
             },
           },
+          fontFamily: {
+            display: ["Public Sans", "sans-serif"],
+          },
         },
-      };
-    </script>
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        min-height: max(884px, 100dvh);
-      }
-    </style>
-  </head>
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
 
-  <body class="font-display bg-background-light dark:bg-background-dark text-[#111318] dark:text-white">
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-      <!-- ===== HEADER ===== -->
-      <header
-        class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-800"
-      >
-        <a href="index.html" class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary text-3xl">school</span>
-          <h2 class="text-lg font-bold tracking-tight text-[#111318] dark:text-white">JK Engineering College</h2>
-        </a>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center space-x-4 text-sm font-medium">
-          <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary-gold">Home</a>
-          <a href="about_us.html" class="text-primary dark:text-secondary-gold">About</a>
-          <a href="departments.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary-gold">Departments</a>
-          <a href="admissions.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary-gold">Admissions</a>
-          <a href="gallery.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary-gold">Gallery</a>
-          <a href="contact_us.html" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary-gold">Contact</a>
-        </nav>
+    body {
+      min-height: max(884px, 100dvh);
+    }
 
-        <!-- Mobile Nav Button -->
-        <button id="menu-btn" class="md:hidden text-[#111318] dark:text-white flex items-center justify-center size-10 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-      </header>
+    /* Mobile Nav Animation */
+    #mobile-nav {
+      transition: all 0.3s ease;
+      transform-origin: top;
+    }
 
-      <!-- Mobile Navigation -->
-      <nav id="mobile-nav" class="hidden md:hidden flex flex-col bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-gray-700 text-sm font-medium">
-        <a href="index.html" class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
-        <a href="about_us.html" class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 text-primary dark:text-secondary-gold bg-gray-100 dark:bg-gray-800">About</a>
-        <a href="departments.html" class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">Departments</a>
-        <a href="admissions.html" class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">Admissions</a>
-        <a href="gallery.html" class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">Gallery</a>
-        <a href="contact_us.html" class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+    #mobile-nav.open {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+
+    #mobile-nav.hidden {
+      opacity: 0;
+      transform: scaleY(0);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111318] dark:text-white">
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    <!-- ===== HEADER ===== -->
+    <header
+      class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 justify-between border-b border-gray-200 dark:border-gray-800">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-3xl">school</span>
+        <h2 class="text-lg sm:text-xl font-bold tracking-tight text-[#111318] dark:text-white">JK Engineering College
+        </h2>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-4 text-sm font-medium">
+        <a href="index.html"
+          class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary-gold">Home</a>
+        <a href="about_us.html" class="text-primary dark:text-secondary-gold">About</a>
+        <a href="departments.html"
+          class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary-gold">Departments</a>
+        <a href="admissions.html"
+          class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary-gold">Admissions</a>
+        <a href="gallery.html"
+          class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary-gold">Gallery</a>
+        <a href="contact_us.html"
+          class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-secondary-gold">Contact</a>
       </nav>
 
-      <!-- ===== MAIN CONTENT ===== -->
-      <main>
-        <!-- HERO SECTION -->
-        <div class="p-0 @[480px]:p-4">
+      <!-- Mobile Nav Button -->
+      <button id="menu-btn"
+        class="md:hidden text-[#111318] dark:text-white flex items-center justify-center size-10 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+        <span class="material-symbols-outlined" id="menu-icon">menu</span>
+      </button>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav"
+      class="hidden md:hidden flex flex-col bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-gray-700 text-sm font-medium">
+      <a href="index.html"
+        class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">Home</a>
+      <a href="about_us.html"
+        class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 text-primary dark:text-secondary-gold bg-gray-100 dark:bg-gray-800">About</a>
+      <a href="departments.html"
+        class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">Departments</a>
+      <a href="admissions.html"
+        class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">Admissions</a>
+      <a href="gallery.html"
+        class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">Gallery</a>
+      <a href="contact_us.html"
+        class="py-3 px-4 border-t border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">Contact</a>
+    </nav>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+      <!-- HERO SECTION -->
+      <div class="p-0 sm:p-4">
+        <div
+          class="flex min-h-[400px] sm:min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat sm:rounded-xl items-center justify-center p-6 text-center"
+          style='background-image: linear-gradient(rgba(13, 64, 165, 0.5), rgba(13, 64, 165, 0.7)), url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1950&q=80");'>
+          <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-black leading-tight">About JK Engineering College
+          </h1>
+          <p class="text-white/90 max-w-2xl text-sm sm:text-base px-2">
+            Discover the history, values, and community that define our commitment to excellence in education and
+            research for over a century.
+          </p>
+          <a href="#vision"
+            class="bg-secondary-gold text-primary px-6 py-3 rounded-lg font-bold mt-4 hover:opacity-90 transition w-fit mx-auto">Learn
+            More</a>
+        </div>
+      </div>
+
+      <!-- Vision & Mission -->
+      <section class="flex flex-col gap-10 px-4 py-10 md:py-16" id="vision">
+        <div class="max-w-4xl mx-auto text-center md:text-left">
+          <h2 class="text-3xl md:text-4xl font-black mb-2">Our Vision & Mission</h2>
+          <p class="text-gray-600 dark:text-gray-400">Our commitment to academic excellence and fostering future leaders
+            who will shape a better world.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
           <div
-            class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:rounded-xl items-center justify-center p-4 text-center"
-            style='background-image: linear-gradient(rgba(13, 64, 165, 0.4), rgba(13, 64, 165, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBQY54yXGho23B1YO0FaSsCcw2aAuk0QO_SMeybvCAglqHMhg71fxIL-JMlq2ZCPFIbtZML8WAE6yG3el1NJmt9X4ankqlIduLz7Wa5umySC2bY9O43xoo28VaJG-pkbiGI3N60MI0dFldnnqE6XaGWEluqIIKHIylm2p5OeO9e5SIEA7tUnNOeLzw0YOBTuuUlvvWha7fadwO4vrT3h1P_wYvZed8CO6dpG4wxmvWXo986xKAtXXfoXB9H3VKBAZqQJGhP19miJE");'
-          >
-            <h1 class="text-white text-4xl font-black @[480px]:text-5xl">About JK Engineering College</h1>
-            <p class="text-white/90 max-w-2xl text-sm @[480px]:text-base">
-              Discover the history, values, and community that define our commitment to excellence in education and research for over a century.
+            class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark flex flex-col gap-2 text-center sm:text-left">
+            <span class="material-symbols-outlined text-primary text-4xl mx-auto sm:mx-0">visibility</span>
+            <h3 class="font-bold text-lg">Our Vision</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">To be a global beacon of knowledge, innovation, and
+              ethical leadership, empowering students to solve the challenges of tomorrow.</p>
+          </div>
+
+          <div
+            class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark flex flex-col gap-2 text-center sm:text-left">
+            <span class="material-symbols-outlined text-primary text-4xl mx-auto sm:mx-0">flag</span>
+            <h3 class="font-bold text-lg">Our Mission</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">To provide a transformative education through rigorous
+              scholarship, diverse perspectives, and a commitment to public service and lifelong learning.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Principal Section -->
+      <section class="bg-white dark:bg-background-dark py-10 md:py-16 px-4">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
+          <div class="flex-shrink-0">
+            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80"
+              alt="Principal Dr. Evelyn Reed"
+              class="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover border-4 border-primary/20 mx-auto md:mx-0 shadow-md" />
+          </div>
+
+          <div class="text-center md:text-left">
+            <p class="text-primary font-bold uppercase tracking-widest mb-2 text-sm">
+              Principal's Welcome
             </p>
-            <a
-              href="#vision"
-              class="bg-secondary-gold text-primary px-5 py-3 rounded-lg font-bold mt-4 hover:opacity-90 transition"
-              >Learn More</a
-            >
+            <h2 class="text-2xl md:text-3xl font-bold">A Message from Dr. Evelyn Reed</h2>
+            <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm md:text-base leading-relaxed">
+              "Welcome to JK Engineering College, a place where curiosity thrives and potential is realized.
+              We are dedicated to nurturing not just brilliant minds, but compassionate individuals ready to
+              make a meaningful impact."
+            </p>
           </div>
         </div>
+      </section>
 
-        <!-- Vision & Mission -->
-        <section class="flex flex-col gap-10 px-4 py-10 md:py-16" id="vision">
-          <div class="max-w-4xl mx-auto text-center md:text-left">
-            <h2 class="text-3xl md:text-4xl font-black mb-2">Our Vision & Mission</h2>
-            <p class="text-gray-600 dark:text-gray-400">Our commitment to academic excellence and fostering future leaders who will shape a better world.</p>
-          </div>
 
-          <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 max-w-4xl mx-auto">
-            <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark flex flex-col gap-2">
-              <span class="material-symbols-outlined text-primary text-3xl">visibility</span>
-              <h3 class="font-bold text-lg">Our Vision</h3>
-              <p class="text-gray-600 dark:text-gray-400 text-sm">To be a global beacon of knowledge, innovation, and ethical leadership, empowering students to solve the challenges of tomorrow.</p>
-            </div>
-
-            <div class="p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark flex flex-col gap-2">
-              <span class="material-symbols-outlined text-primary text-3xl">flag</span>
-              <h3 class="font-bold text-lg">Our Mission</h3>
-              <p class="text-gray-600 dark:text-gray-400 text-sm">To provide a transformative education through rigorous scholarship, diverse perspectives, and a commitment to public service and lifelong learning.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Principal Section -->
-        <section class="bg-white dark:bg-background-dark py-10 md:py-16">
-          <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 p-4">
-            <div
-              class="bg-center bg-cover rounded-full min-h-40 w-40 border-4 border-primary/20"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAi1ns7W_aRtXT9RMxgys-tEn1ZewKTd5mcI4THFO_-wEjQ9AJ01LZrLBTP9jdX-8eri1agryTa36vRo6nah_vcZzVO995nQxls_fV23BQGS-xNVqQg_1iwH_TirPaelSIJuy-Q56dNW4EtaC3sFf6LbopBWF0nE8pODlrUYiaRPTPXiYjufPVS-Gmv5vLxoxyTp9klxifKEBHKYqlhSJzyzgnnAUpOgpOrX8AILS4iNm7Z9G1wOvn6L48Vf84Hq_QGPcHTBWEMwjE");'
-            ></div>
-
-            <div class="text-center md:text-left">
-              <p class="text-primary font-bold uppercase tracking-widest mb-2 text-sm">Principal's Welcome</p>
-              <h2 class="text-2xl md:text-3xl font-bold">A Message from Dr. Evelyn Reed</h2>
-              <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm md:text-base leading-relaxed">
-                "Welcome to JK Engineering College, a place where curiosity thrives and potential is realized. We are dedicated to nurturing not just brilliant minds, but compassionate individuals ready to make a meaningful impact."
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Infrastructure -->
-        <section class="px-4 py-10 md:py-16 max-w-4xl mx-auto">
-          <div class="text-center mb-8">
-            <h2 class="text-2xl md:text-3xl font-bold">Our Infrastructure</h2>
-            <p class="text-gray-600 dark:text-gray-400 mt-2">State-of-the-art facilities to support a world-class learning experience.</p>
-          </div>
-
-          <div class="flex flex-col gap-3">
-            <details class="group rounded-xl bg-white dark:bg-gray-900/50 p-4 border border-gray-200 dark:border-gray-800" open>
-              <summary class="flex justify-between cursor-pointer font-semibold">
-                <span>The Grand Library</span>
-                <span class="material-symbols-outlined text-primary transition group-open:rotate-180">expand_more</span>
-              </summary>
-              <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
-                Our four-story library houses over a million volumes, digital archives, quiet study zones, and collaborative spaces.
-              </p>
-            </details>
-
-            <details class="group rounded-xl bg-white dark:bg-gray-900/50 p-4 border border-gray-200 dark:border-gray-800">
-              <summary class="flex justify-between cursor-pointer font-semibold">
-                <span>Advanced Science Labs</span>
-                <span class="material-symbols-outlined text-primary transition group-open:rotate-180">expand_more</span>
-              </summary>
-              <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
-                Equipped with the latest technology for physics, chemistry, and biology, supporting groundbreaking faculty research.
-              </p>
-            </details>
-
-            <details class="group rounded-xl bg-white dark:bg-gray-900/50 p-4 border border-gray-200 dark:border-gray-800">
-              <summary class="flex justify-between cursor-pointer font-semibold">
-                <span>Athletics & Recreation Complex</span>
-                <span class="material-symbols-outlined text-primary transition group-open:rotate-180">expand_more</span>
-              </summary>
-              <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
-                Featuring an Olympic-sized swimming pool, indoor courts, a modern fitness center, and outdoor fields for all-round development.
-              </p>
-            </details>
-          </div>
-        </section>
-      </main>
-
-      <!-- ===== FOOTER ===== -->
-      <footer class="bg-primary text-white">
-        <div class="max-w-7xl mx-auto px-4 py-10 md:py-16">
-          <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
-            <div>
-              <h3 class="text-xl font-bold mb-2">JK Engineering College</h3>
-              <p class="text-white/80 text-sm">Excellence in Education Since 1901.</p>
-            </div>
-
-            <div>
-              <h4 class="font-bold text-secondary-gold uppercase text-sm mb-2">Quick Links</h4>
-              <a href="admissions.html" class="block text-white/80 hover:text-white text-sm">Admissions</a>
-              <a href="departments.html" class="block text-white/80 hover:text-white text-sm">Programs</a>
-              <a href="contact_us.html" class="block text-white/80 hover:text-white text-sm">Contact Us</a>
-            </div>
-
-            <a
-              href="departments.html"
-              class="flex items-center justify-center rounded-lg bg-white text-primary font-bold h-12 px-5 hover:bg-gray-200 transition"
-              >Explore Programs</a
-            >
-          </div>
-
-          <div class="mt-10 border-t border-white/20 pt-6 text-center text-xs text-white/60">
-            <p>© 2025 JK Engineering College. All Rights Reserved.</p>
-          </div>
+      <!-- Infrastructure -->
+      <section class="px-4 py-10 md:py-16 max-w-4xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold">Our Infrastructure</h2>
+          <p class="text-gray-600 dark:text-gray-400 mt-2">State-of-the-art facilities to support a world-class learning
+            experience.</p>
         </div>
-      </footer>
-    </div>
 
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileNav = document.getElementById("mobile-nav");
-      menuBtn.addEventListener("click", () => mobileNav.classList.toggle("hidden"));
-    </script>
-  </body>
+        <div class="flex flex-col gap-3">
+          <details class="group rounded-xl bg-white dark:bg-gray-900/50 p-4 border border-gray-200 dark:border-gray-800"
+            open>
+            <summary class="flex justify-between items-center cursor-pointer font-semibold">
+              <span>The Grand Library</span>
+              <span class="material-symbols-outlined text-primary transition group-open:rotate-180">expand_more</span>
+            </summary>
+            <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
+              Our four-story library houses over a million volumes, digital archives, quiet study zones, and
+              collaborative spaces.
+            </p>
+          </details>
+
+          <details
+            class="group rounded-xl bg-white dark:bg-gray-900/50 p-4 border border-gray-200 dark:border-gray-800">
+            <summary class="flex justify-between items-center cursor-pointer font-semibold">
+              <span>Advanced Science Labs</span>
+              <span class="material-symbols-outlined text-primary transition group-open:rotate-180">expand_more</span>
+            </summary>
+            <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
+              Equipped with the latest technology for physics, chemistry, and biology, supporting groundbreaking faculty
+              research.
+            </p>
+          </details>
+
+          <details
+            class="group rounded-xl bg-white dark:bg-gray-900/50 p-4 border border-gray-200 dark:border-gray-800">
+            <summary class="flex justify-between items-center cursor-pointer font-semibold">
+              <span>Athletics & Recreation Complex</span>
+              <span class="material-symbols-outlined text-primary transition group-open:rotate-180">expand_more</span>
+            </summary>
+            <p class="mt-3 text-sm text-gray-600 dark:text-gray-400">
+              Featuring an Olympic-sized swimming pool, indoor courts, a modern fitness center, and outdoor fields for
+              all-round development.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-primary text-white">
+      <div class="max-w-7xl mx-auto px-4 py-10 md:py-16">
+        <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-2">JK Engineering College</h3>
+            <p class="text-white/80 text-sm">Excellence in Education Since 1901.</p>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-secondary-gold uppercase text-sm mb-2">Quick Links</h4>
+            <a href="admissions.html" class="block text-white/80 hover:text-white text-sm">Admissions</a>
+            <a href="departments.html" class="block text-white/80 hover:text-white text-sm">Programs</a>
+            <a href="contact_us.html" class="block text-white/80 hover:text-white text-sm">Contact Us</a>
+          </div>
+
+          <a href="departments.html"
+            class="flex items-center justify-center rounded-lg bg-white text-primary font-bold h-12 px-5 hover:bg-gray-200 transition w-fit">Explore
+            Programs</a>
+        </div>
+
+        <div class="mt-10 border-t border-white/20 pt-6 text-center text-xs text-white/60">
+          <p>© 2025 JK Engineering College. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileNav = document.getElementById("mobile-nav");
+    const menuIcon = document.getElementById("menu-icon");
+
+    menuBtn.addEventListener("click", () => {
+      const isHidden = mobileNav.classList.contains("hidden");
+      mobileNav.classList.toggle("hidden");
+      mobileNav.classList.toggle("open");
+      menuIcon.textContent = isHidden ? "close" : "menu";
+    });
+  </script>
+</body>
+
 </html>
